@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { BookOpen, FileText, ChevronRight, ExternalLink, Lightbulb, BookmarksSimple, GraduationCap } from "lucide-react";
+import { BookOpen, FileText, ChevronRight, ExternalLink, Lightbulb, Bookmark, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Resources = () => {
@@ -67,7 +67,7 @@ const Resources = () => {
             
             <div className="glass-card p-6 rounded-xl border border-white/10 hover-grow pulse-glow animate-slide-up" style={{animationDelay: "0.3s"}}>
               <div className="p-2 bg-white/10 inline-block rounded-full mb-4">
-                <BookmarksSimple className="text-white h-6 w-6" />
+                <Bookmark className="text-white h-6 w-6" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Fact-Checking Guide</h3>
               <p className="text-gray-300 mb-4">
