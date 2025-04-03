@@ -27,11 +27,11 @@ const VerifyNews = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             <div className="flex justify-center mb-6">
-              <div className="p-3 glass-card inline-block rounded-full">
-                <Shield className="h-10 w-10 text-white" />
+              <div className="p-3 glass-card inline-block rounded-full pulse-glow">
+                <Shield className="h-10 w-10 text-white animate-pulse-scale" />
               </div>
             </div>
-            <h1 className="text-4xl font-bold mb-4 text-gradient">Verify News</h1>
+            <h1 className="text-4xl font-bold mb-4 text-gradient text-shadow">Verify News</h1>
             <p className="text-gray-300 max-w-2xl mx-auto">
               Our verification tool helps you identify potential misinformation. 
               Enter the news content or URL you want to verify below.
@@ -39,9 +39,9 @@ const VerifyNews = () => {
           </div>
           
           <div className="my-8 max-w-3xl mx-auto px-4">
-            <div className="glass-card p-6 rounded-xl border border-white/10 mb-8 animate-slide-up">
+            <div className="glass-card p-6 rounded-xl border border-white/10 mb-8 animate-slide-up hover-grow pulse-glow">
               <div className="flex items-start gap-4">
-                <AlertTriangle className="text-amber-400 h-5 w-5 mt-0.5 flex-shrink-0" />
+                <AlertTriangle className="text-amber-400 h-5 w-5 mt-0.5 flex-shrink-0 animate-bounce-slow" />
                 <div className="text-sm">
                   <p className="font-medium mb-2 text-white">How to get the best results</p>
                   <ul className="list-disc pl-5 space-y-2 text-gray-300">

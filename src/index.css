@@ -118,3 +118,115 @@
 .glowing-border:hover {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
+
+/* Improve text contrast on light backgrounds */
+.bg-white, .bg-white\/5, .bg-white\/10, .bg-white\/20 {
+  @apply text-gray-900;
+}
+
+.bg-white\/5 h1, .bg-white\/5 h2, .bg-white\/5 h3, .bg-white\/5 h4, .bg-white\/5 h5, .bg-white\/5 h6,
+.bg-white\/10 h1, .bg-white\/10 h2, .bg-white\/10 h3, .bg-white\/10 h4, .bg-white\/10 h5, .bg-white\/10 h6,
+.bg-white\/20 h1, .bg-white\/20 h2, .bg-white\/20 h3, .bg-white\/20 h4, .bg-white\/20 h5, .bg-white\/20 h6 {
+  @apply text-white;
+}
+
+/* Enhanced animations */
+.pulse-glow {
+  animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.1); }
+  100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+}
+
+.hover-grow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-grow:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation for elements */
+.animate-bounce-slow {
+  animation: bounceSlow 4s infinite ease-in-out;
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 10s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-pulse-scale {
+  animation: pulseScale 3s infinite alternate;
+}
+
+@keyframes pulseScale {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* Text contrast fixes for cards and alerts */
+.glass-card, .bg-white\/5, .bg-white\/10, .bg-white\/20 {
+  color: rgb(229, 231, 235);
+}
+
+.glass-card h1, .glass-card h2, .glass-card h3, 
+.glass-card h4, .glass-card h5, .glass-card h6,
+.bg-white\/5 h1, .bg-white\/5 h2, .bg-white\/5 h3, 
+.bg-white\/5 h4, .bg-white\/5 h5, .bg-white\/5 h6,
+.bg-white\/10 h1, .bg-white\/10 h2, .bg-white\/10 h3, 
+.bg-white\/10 h4, .bg-white\/10 h5, .bg-white\/10 h6,
+.bg-white\/20 h1, .bg-white\/20 h2, .bg-white\/20 h3, 
+.bg-white\/20 h4, .bg-white\/20 h5, .bg-white\/20 h6 {
+  color: white;
+}
+
+.glass-card p, .bg-white\/5 p, .bg-white\/10 p, .bg-white\/20 p,
+.glass-card span, .bg-white\/5 span, .bg-white\/10 span, .bg-white\/20 span,
+.glass-card div, .bg-white\/5 div, .bg-white\/10 div, .bg-white\/20 div {
+  color: rgb(229, 231, 235);
+}
+
+/* Button animations */
+.button-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right, 
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
