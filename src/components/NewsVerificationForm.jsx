@@ -8,9 +8,9 @@ import { AlertTriangle, FileText, Globe, BarChart3, FileCheck2 } from "lucide-re
 const NewsVerificationForm = () => {
   const [text, setText] = useState("");
   const [url, setUrl] = useState("");
-  const [inputType, setInputType] = useState<"text" | "url">("text");
+  const [inputType, setInputType] = useState("text");
   const [isLoading, setIsLoading] = useState(false);
-  const [results, setResults] = useState<any>(null);
+  const [results, setResults] = useState(null);
 
   const handleVerify = async () => {
     if ((inputType === "text" && !text) || (inputType === "url" && !url)) {
@@ -204,7 +204,7 @@ const NewsVerificationForm = () => {
           <div className="glass-card p-6 rounded-xl">
             <h4 className="font-medium text-white mb-4">Fact Check:</h4>
             <div className="space-y-4">
-              {results.fact_check_points.map((point: any, index: number) => (
+              {results.fact_check_points.map((point, index) => (
                 <div key={index} className="glass-card p-4 rounded-lg">
                   <div className="flex justify-between mb-2">
                     <span className="text-sm text-white">{point.claim}</span>
