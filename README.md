@@ -1,2 +1,3 @@
 AI Mini Project:-
-Fake News Detector 
+Fake News Detector
+Ps:- It's Fake :)
