@@ -11,6 +11,9 @@ import Legal from "./pages/Legal";
 import Resources from "./pages/Resources";
 import NotFound from "./pages/NotFound";
 
+// Remove unused App.css import
+// import './App.css';
+
 const queryClient = new QueryClient();
 
 const App = () => (
