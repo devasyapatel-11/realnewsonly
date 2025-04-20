@@ -14,14 +14,14 @@ const NewsVerificationForm = () => {
   const isUrlFromTrustedSource = (url) => {
     try {
       const hostname = new URL(url).hostname.toLowerCase();
-      const trustedDomains = ['hindustantimes.com', 'timesofindia.indiatimes.com'];
+      const trustedDomains = ['hindustantimes.com', 'timesofindia.indiatimes.com', 'thehindubusinessline.com', 'indianexpress.com'];
       const misleadingDomains = ['thefauxy.com'];
       
       if (trustedDomains.some(domain => hostname.includes(domain))) {
-        return true;
+        return true; // Always true for specified trusted domains
       }
       if (misleadingDomains.some(domain => hostname.includes(domain))) {
-        return false;
+        return false; // Always false for specified misleading domains
       }
       return null; // Unknown source
     } catch (error) {
@@ -54,7 +54,7 @@ const NewsVerificationForm = () => {
             },
             explanation: isTrusted 
               ? "This news article is from a credible mainstream news source."
-              : "This URL is from a known satirical/misleading news website.",
+              : "This URL is from a known misleading news website.",
             fact_check_points: [
               { 
                 claim: "Source Credibility", 
