@@ -1,2 +1,10 @@
-/* This file is no longer being used and styles are moved to index.css */
-/* Keeping this file empty to avoid deletion but preventing style conflicts */
+
+/* Only add minor resets here - main styles are in index.css */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* Other app-wide styles can go here */
