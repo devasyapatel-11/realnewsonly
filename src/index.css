@@ -48,19 +48,7 @@
       hsl(220, 13%, 10%) 50%, 
       hsl(220, 13%, 5%) 100%
     );
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    width: 100%;
   }
-}
-
-#root {
-  max-width: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
 }
 
 .text-gradient {
@@ -133,7 +121,7 @@
 
 /* Improve text contrast on light backgrounds */
 .bg-white, .bg-white\/5, .bg-white\/10, .bg-white\/20 {
-  @apply text-gray-200;
+  @apply text-gray-900;
 }
 
 .bg-white\/5 h1, .bg-white\/5 h2, .bg-white\/5 h3, .bg-white\/5 h4, .bg-white\/5 h5, .bg-white\/5 h6,
@@ -193,6 +181,28 @@
   100% { transform: scale(1.05); }
 }
 
+/* Text contrast fixes for cards and alerts */
+.glass-card, .bg-white\/5, .bg-white\/10, .bg-white\/20 {
+  color: rgb(229, 231, 235);
+}
+
+.glass-card h1, .glass-card h2, .glass-card h3, 
+.glass-card h4, .glass-card h5, .glass-card h6,
+.bg-white\/5 h1, .bg-white\/5 h2, .bg-white\/5 h3, 
+.bg-white\/5 h4, .bg-white\/5 h5, .bg-white\/5 h6,
+.bg-white\/10 h1, .bg-white\/10 h2, .bg-white\/10 h3, 
+.bg-white\/10 h4, .bg-white\/10 h5, .bg-white\/10 h6,
+.bg-white\/20 h1, .bg-white\/20 h2, .bg-white\/20 h3, 
+.bg-white\/20 h4, .bg-white\/20 h5, .bg-white\/20 h6 {
+  color: white;
+}
+
+.glass-card p, .bg-white\/5 p, .bg-white\/10 p, .bg-white\/20 p,
+.glass-card span, .bg-white\/5 span, .bg-white\/10 span, .bg-white\/20 span,
+.glass-card div, .bg-white\/5 div, .bg-white\/10 div, .bg-white\/20 div {
+  color: rgb(229, 231, 235);
+}
+
 /* Button animations */
 .button-glow {
   position: relative;
@@ -219,17 +229,4 @@
 @keyframes shine {
   0% { transform: translateX(-100%) rotate(45deg); }
   100% { transform: translateX(100%) rotate(45deg); }
-}
-
-/* Fix for Navbar and layout issues */
-nav {
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-/* Fix spacing issues */
-main {
-  width: 100%;
 }

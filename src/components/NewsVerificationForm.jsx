@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Toggle } from "@/components/ui/toggle";
@@ -11,24 +12,6 @@ const NewsVerificationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState(null);
 
-  const isUrlFromTrustedSource = (url) => {
-    try {
-      const hostname = new URL(url).hostname.toLowerCase();
-      const trustedDomains = ['hindustantimes.com', 'timesofindia.indiatimes.com', 'thehindubusinessline.com', 'indianexpress.com'];
-      const misleadingDomains = ['thefauxy.com'];
-      
-      if (trustedDomains.some(domain => hostname.includes(domain))) {
-        return true; // Always true for specified trusted domains
-      }
-      if (misleadingDomains.some(domain => hostname.includes(domain))) {
-        return false; // Always false for specified misleading domains
-      }
-      return null; // Unknown source
-    } catch (error) {
-      return null; // Invalid URL
-    }
-  };
-
   const handleVerify = async () => {
     if ((inputType === "text" && !text) || (inputType === "url" && !url)) {
       toast.error("Please enter content to verify");
@@ -37,39 +20,6 @@ const NewsVerificationForm = () => {
 
     setIsLoading(true);
     
-    // For URL input, check the domain
-    if (inputType === "url") {
-      const isTrusted = isUrlFromTrustedSource(url);
-      
-      if (isTrusted !== null) {
-        setTimeout(() => {
-          setResults({
-            credibility_score: isTrusted ? 95 : 15,
-            classification: isTrusted ? "Real News" : "Potentially Misleading",
-            confidence: isTrusted ? 95 : 90,
-            analysis: {
-              clickbait_score: isTrusted ? 20 : 85,
-              emotional_tone: isTrusted ? 30 : 75,
-              source_credibility: isTrusted ? 90 : 10,
-            },
-            explanation: isTrusted 
-              ? "This news article is from a credible mainstream news source."
-              : "This URL is from a known misleading news website.",
-            fact_check_points: [
-              { 
-                claim: "Source Credibility", 
-                assessment: isTrusted ? "Trusted Source" : "Unreliable Source", 
-                confidence: 95 
-              }
-            ]
-          });
-          setIsLoading(false);
-        }, 1500);
-        return;
-      }
-    }
-
-    // Default behavior for text input or unknown URLs
     // Simulate API call
     setTimeout(() => {
       // Mock results - frontend only demo
